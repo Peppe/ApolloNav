@@ -1,0 +1,165 @@
+:host {
+  display: block;
+  font-family: var(--lumo-font-family);
+  -webkit-tap-highlight-color: transparent;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li li>.title-and-toggle a {
+  padding-inline-start: calc(var(--lumo-icon-size-s) + var(--lumo-space-s) + var(--lumo-space-s));
+}
+
+li li li>.title-and-toggle a {
+  padding-inline-start: calc(var(--lumo-icon-size-s) + var(--lumo-space-s) + var(--lumo-space-s) + var(--lumo-space-m));
+}
+
+ul ul>li .title-and-toggle a {
+  font-weight: 400;
+}
+
+li:not(.open) ul {
+  display: none;
+}
+
+.title-and-toggle {
+  display: flex;
+  align-items: center;
+  margin: var(--lumo-space-xs) 0;
+  color: var(--lumo-secondary-text-color);
+  border-radius: var(--lumo-border-radius-m);
+  transition: background-color 140ms;
+}
+
+a {
+  display: flex;
+  flex: auto;
+  min-width: 0;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  font-size: var(--lumo-font-size-m);
+  line-height: var(--lumo-line-height-xs);
+  font-weight: 500;
+  padding: var(--lumo-space-s);
+  transition: color 140ms;
+}
+
+.active>.title-and-toggle {
+  color: var(--lumo-primary-text-color);
+  background-color: var(--lumo-primary-color-10pct);
+}
+
+.title {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  flex: auto;
+  padding: 0 var(--lumo-space-s);
+}
+
+.badge {
+  font-size: var(--lumo-font-size-s);
+  padding: 0 var(--lumo-space-s);
+  line-height: 1;
+}
+
+.toggle {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  width: var(--lumo-size-m);
+  height: var(--lumo-size-m);
+  margin-inline-start: calc(var(--lumo-space-m) * -1);
+}
+
+.toggle svg {
+  pointer-events: none;
+}
+
+li:not(.open) .toggle {
+  transform: rotate(-90deg);
+}
+
+.icon {
+  flex: none;
+  display: inline-block;
+  width: var(--lumo-icon-size-s);
+  height: var(--lumo-icon-size-s);
+  border: 3px solid var(--lumo-contrast-40pct);
+  border-radius: var(--lumo-border-radius-l);
+  margin-inline-end: var(--lumo-space-s);
+  box-sizing: border-box;
+}
+
+.active>.title-and-toggle .icon {
+  border-color: currentColor;
+}
+
+li:not(.active)>.title-and-toggle a:hover,
+li:not(.active)>.title-and-toggle a:focus,
+li:not(.active)>.title-and-toggle .toggle:hover,
+li:not(.active)>.title-and-toggle .toggle:focus {
+  color: var(--lumo-body-text-color);
+}
+
+li:not(.active) a:active {
+  color: var(--lumo-header-text-color);
+}
+
+.label {
+  font-size: var(--lumo-font-size-s);
+  color: var(--lumo-secondary-text-color);
+  line-height: var(--lumo-line-height-xs);
+  font-weight: 500;
+  padding: var(--lumo-space-s);
+  margin-top: var(--lumo-space-m);
+}
+
+:host(:first-child) .label {
+  margin-top: 0;
+}
+
+@supports selector(a:focus-visible) {
+
+  a,
+  button {
+    outline: none;
+  }
+
+  a:focus-visible,
+  button:focus-visible {
+    border-radius: var(--lumo-border-radius-m);
+    box-shadow: 0 0 0 2px var(--lumo-primary-color-50pct);
+  }
+}
+
+:host([theme~="small"]) a {
+  font-size: var(--lumo-font-size-s);
+}
+
+:host([theme~="small"]) .label,
+:host([theme~="small"]) .badge {
+  font-size: var(--lumo-font-size-xs);
+}
+
+:host([theme~="small"]) .icon {
+  width: calc(var(--lumo-icon-size-s) * 0.95);
+  height: calc(var(--lumo-icon-size-s) * 0.95);
+}
+
+:host svg {
+   width: 16px; 
+   height: 16px; 
+   fill:var(--lumo-secondary-text-color);
+}
