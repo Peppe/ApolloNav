@@ -1,4 +1,4 @@
-package com.jensjansson.vaadinnav;
+package org.vaadin.addons.apollonav.apollo;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -8,33 +8,33 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * One menu item to be used within a `VaadinNav`.
+ * One menu item to be used within a `ApolloNav`.
  */
-public class VaadinNavItem implements Serializable {
+public class ApolloNavItem implements Serializable {
     private String path;
     private String title;
     private String icon;
     private Integer badge;
-    private List<VaadinNavItem> children = Collections.emptyList();
+    private List<ApolloNavItem> children = Collections.emptyList();
 
-    public VaadinNavItem() {
+    public ApolloNavItem() {
     }
 
-    public VaadinNavItem(String path, String title) {
+    public ApolloNavItem(String path, String title) {
         this(path, title, null, null, null);
     }
 
-    public VaadinNavItem(String path, String title, String icon) {
+    public ApolloNavItem(String path, String title, String icon) {
         this(path, title, icon, null, null);
     }
 
-    public VaadinNavItem(String path, String title, String icon,
+    public ApolloNavItem(String path, String title, String icon,
             Integer badge) {
         this(path, title, icon, badge, null);
     }
 
-    public VaadinNavItem(String path, String title, String icon, Integer badge,
-            Collection<VaadinNavItem> children) {
+    public ApolloNavItem(String path, String title, String icon, Integer badge,
+            Collection<ApolloNavItem> children) {
         this.path = path;
         this.title = title;
         this.icon = icon;
@@ -54,7 +54,7 @@ public class VaadinNavItem implements Serializable {
      * @param path
      * @return
      */
-    public VaadinNavItem setPath(String path) {
+    public ApolloNavItem setPath(String path) {
         this.path = path;
         return this;
     }
@@ -70,7 +70,7 @@ public class VaadinNavItem implements Serializable {
      * @param title
      * @return
      */
-    public VaadinNavItem setTitle(String title) {
+    public ApolloNavItem setTitle(String title) {
         this.title = title;
         return this;
     }
@@ -90,7 +90,7 @@ public class VaadinNavItem implements Serializable {
      * @param icon
      * @return
      */
-    public VaadinNavItem setIcon(String icon) {
+    public ApolloNavItem setIcon(String icon) {
         this.icon = icon;
         return this;
     }
@@ -106,36 +106,36 @@ public class VaadinNavItem implements Serializable {
      * @param badge
      * @return
      */
-    public VaadinNavItem setBadge(Integer badge) {
+    public ApolloNavItem setBadge(Integer badge) {
         this.badge = badge;
         return this;
     }
 
-    public List<VaadinNavItem> getChildren() {
+    public List<ApolloNavItem> getChildren() {
         return children;
     }
 
     /**
      * Set children to a menu item. The menu item will get a chevron that the
      * user can open to see the additional views. The children are
-     * `VaadinNavItem`s as well.
+     * `ApolloNavItem`s as well.
      * 
      * @param children
      * @return
      */
-    public VaadinNavItem setChildren(VaadinNavItem... children) {
+    public ApolloNavItem setChildren(ApolloNavItem... children) {
         return setChildren(Arrays.asList(children));
     }
 
     /**
      * Set children to a menu item. The menu item will get a chevron that the
      * user can open to see the additional views. The children are
-     * `VaadinNavItem`s as well.
+     * `ApolloNavItem`s as well.
      *
      * @param children
      * @return
      */
-    public VaadinNavItem setChildren(Collection<VaadinNavItem> children) {
+    public ApolloNavItem setChildren(Collection<ApolloNavItem> children) {
         this.children = children != null ? new ArrayList<>(children)
                 : Collections.emptyList();
         return this;

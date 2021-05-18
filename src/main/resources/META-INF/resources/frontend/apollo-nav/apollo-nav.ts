@@ -8,7 +8,7 @@ import {
 import '@vaadin/vaadin-text-field/vaadin-text-field.js';
 import '@vaadin/vaadin-button/vaadin-button.js';
 import '@vaadin/vaadin-rich-text-editor/vaadin-rich-text-editor.js'
-import styles from "./vaadin-nav.css";
+import styles from "./apollo-nav.css";
 // @ts-ignore
 import * as glyphs from "./vaadin-icons-bundle.js";
 
@@ -20,8 +20,8 @@ interface NavItem {
   children?: NavItem[];
 }
 
-@customElement("vaadin-nav")
-class VaadinNav extends LitElement {
+@customElement("apollo-nav")
+class ApolloNav extends LitElement {
   static styles = [styles];
   
   @property({ type: Array })
@@ -135,4 +135,4 @@ class VaadinNav extends LitElement {
     });
   }
 }
-export default VaadinNav;
+export default ApolloNav;

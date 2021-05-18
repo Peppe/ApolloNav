@@ -1,4 +1,4 @@
-package com.jensjansson.vaadinnav;
+package org.vaadin.addons.apollonav.apollo;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -16,31 +16,31 @@ import elemental.json.Json;
 import elemental.json.JsonArray;
 import elemental.json.JsonObject;
 
-@Tag("vaadin-nav")
-@JsModule("./vaadin-nav/vaadin-nav.ts")
+@Tag("apollo-nav")
+@JsModule("./apollo-nav/apollo-nav.ts")
 /**
  * A navigation component meant for e.g. main menu. Supports links, captions,
  * icons, nesting and a number badge. Perfect for setting within the drawer of
  * `AppLayout`.
  * 
  * Use setLabel(String) to put the label above the component. Use
- * setItems(VaadinNavItem...) put configure the menu items.
+ * setItems(ApolloNavItem...) put configure the menu items.
  * 
- * Here's a full example that you can use as a starting point ``` VaadinNav nav
- * = new VaadinNav("Main menu"); nav.setItems( new VaadinNavItem("dashboard",
- * "Dashboard", "lineBarChart"), new VaadinNavItem("customers", "Customers",
- * "suitcase"), new VaadinNavItem("leads", "Leads", "tabA", null, Arrays.asList(
- * new VaadinNavItem("leads/high-profile", "High profile", "userStar"), new
- * VaadinNavItem("leads/others", "Others", "userClock"))), new
- * VaadinNavItem("todos", "To-dos", "tasks", 9, Arrays.asList( new
- * VaadinNavItem("leads/High", "High", null, 2), new
- * VaadinNavItem("leads/medium", "Medium", null, 4), new
- * VaadinNavItem("leads/low", "Low", null, 3))), new VaadinNavItem("inbounds",
+ * Here's a full example that you can use as a starting point ``` ApolloNav nav
+ * = new ApolloNav("Main menu"); nav.setItems( new ApolloNavItem("dashboard",
+ * "Dashboard", "lineBarChart"), new ApolloNavItem("customers", "Customers",
+ * "suitcase"), new ApolloNavItem("leads", "Leads", "tabA", null, Arrays.asList(
+ * new ApolloNavItem("leads/high-profile", "High profile", "userStar"), new
+ * ApolloNavItem("leads/others", "Others", "userClock"))), new
+ * ApolloNavItem("todos", "To-dos", "tasks", 9, Arrays.asList( new
+ * ApolloNavItem("leads/High", "High", null, 2), new
+ * ApolloNavItem("leads/medium", "Medium", null, 4), new
+ * ApolloNavItem("leads/low", "Low", null, 3))), new ApolloNavItem("inbounds",
  * "Inbounds", "envelope", 12)); nav.setWidth("200px"); add(nav); ```
  */
-public class VaadinNav extends LitTemplate implements HasSize, HasStyle {
+public class ApolloNav extends LitTemplate implements HasSize, HasStyle {
 
-    List<VaadinNavItem> items = Collections.emptyList();
+    List<ApolloNavItem> items = Collections.emptyList();
     private boolean pendingUpdate = false;
 
     /**
@@ -48,14 +48,14 @@ public class VaadinNav extends LitTemplate implements HasSize, HasStyle {
      * don't call `setLabel` or `setItems`. See the class JavaDocs for a full
      * example.
      */
-    public VaadinNav() {
+    public ApolloNav() {
     }
 
     /**
      * Initializes an navigation component with a set caption. See the class
      * JavaDoc for a full example.
      */
-    public VaadinNav(String label) {
+    public ApolloNav(String label) {
         setLabel(label);
     }
 
@@ -80,21 +80,21 @@ public class VaadinNav extends LitTemplate implements HasSize, HasStyle {
 
     /**
      * Set the items that should be shown in the menu. See class JavaDoc for an
-     * example, and check `VaadinNavItem` for available API.
+     * example, and check `ApolloNavItem` for available API.
      * 
      * @param items
      */
-    public void setItems(VaadinNavItem... items) {
+    public void setItems(ApolloNavItem... items) {
         setItems(Arrays.asList(items));
     }
 
     /**
      * Set the items that should be shown in the menu. See class JavaDoc for an
-     * example, and check `VaadinNavItem` for available API.
+     * example, and check `ApolloNavItem` for available API.
      *
      * @param items
      */
-    public void setItems(Collection<VaadinNavItem> items) {
+    public void setItems(Collection<ApolloNavItem> items) {
         this.items = new ArrayList<>(items);
         setClientItems();
     }
@@ -104,7 +104,7 @@ public class VaadinNav extends LitTemplate implements HasSize, HasStyle {
      * 
      * @return current menu items
      */
-    public List<VaadinNavItem> getItems() {
+    public List<ApolloNavItem> getItems() {
         return items;
     }
 
@@ -120,9 +120,9 @@ public class VaadinNav extends LitTemplate implements HasSize, HasStyle {
         }
     }
 
-    private JsonArray createItemsJsonArray(Collection<VaadinNavItem> items) {
+    private JsonArray createItemsJsonArray(Collection<ApolloNavItem> items) {
         JsonArray jsonItems = Json.createArray();
-        for (VaadinNavItem item : items) {
+        for (ApolloNavItem item : items) {
             JsonObject jsonItem = Json.createObject();
             if (item.getPath() != null) {
                 jsonItem.put("path", item.getPath());
