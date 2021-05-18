@@ -49,7 +49,7 @@ class ApolloNav extends LitElement {
   @property()
   label: String | undefined = undefined;
 
-  render(): TemplateResult {
+  render() {
     return html`
       ${this.label ? html`<div class="label">${this.label}</div>` : html``}
       <nav aria-label="${this.label ?? ""}">

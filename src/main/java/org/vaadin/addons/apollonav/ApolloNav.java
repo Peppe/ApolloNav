@@ -1,4 +1,4 @@
-package org.vaadin.addons.apollonav.apollo;
+package org.vaadin.addons.apollonav;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -6,11 +6,11 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
+import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.HasSize;
 import com.vaadin.flow.component.HasStyle;
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.JsModule;
-import com.vaadin.flow.component.littemplate.LitTemplate;
 
 import elemental.json.Json;
 import elemental.json.JsonArray;
@@ -26,19 +26,27 @@ import elemental.json.JsonObject;
  * Use setLabel(String) to put the label above the component. Use
  * setItems(ApolloNavItem...) put configure the menu items.
  * 
- * Here's a full example that you can use as a starting point ``` ApolloNav nav
- * = new ApolloNav("Main menu"); nav.setItems( new ApolloNavItem("dashboard",
- * "Dashboard", "lineBarChart"), new ApolloNavItem("customers", "Customers",
- * "suitcase"), new ApolloNavItem("leads", "Leads", "tabA", null, Arrays.asList(
- * new ApolloNavItem("leads/high-profile", "High profile", "userStar"), new
- * ApolloNavItem("leads/others", "Others", "userClock"))), new
- * ApolloNavItem("todos", "To-dos", "tasks", 9, Arrays.asList( new
- * ApolloNavItem("leads/High", "High", null, 2), new
- * ApolloNavItem("leads/medium", "Medium", null, 4), new
- * ApolloNavItem("leads/low", "Low", null, 3))), new ApolloNavItem("inbounds",
- * "Inbounds", "envelope", 12)); nav.setWidth("200px"); add(nav); ```
+ * Here's a full example that you can use as a starting point
+ * 
+ * <pre>
+ * ApolloNav nav = new ApolloNav("Main menu");
+ * nav.setItems(new ApolloNavItem("dashboard", "Dashboard", "lineBarChart"),
+ *         new ApolloNavItem("customers", "Customers", "suitcase"),
+ *         new ApolloNavItem("leads", "Leads", "tabA", null, Arrays.asList(
+ *                 new ApolloNavItem("leads/high-profile", "High profile",
+ *                         "userStar"),
+ *                 new ApolloNavItem("leads/others", "Others", "userClock"))),
+ *         new ApolloNavItem("todos", "To-dos", "tasks", 9,
+ *                 Arrays.asList(
+ *                         new ApolloNavItem("leads/High", "High", null, 2),
+ *                         new ApolloNavItem("leads/medium", "Medium", null, 4),
+ *                         new ApolloNavItem("leads/low", "Low", null, 3))),
+ *         new ApolloNavItem("inbounds", "Inbounds", "envelope", 12));
+ * nav.setWidth("200px");
+ * add(nav);
+ * </pre>
  */
-public class ApolloNav extends LitTemplate implements HasSize, HasStyle {
+public class ApolloNav extends Component implements HasSize, HasStyle {
 
     List<ApolloNavItem> items = Collections.emptyList();
     private boolean pendingUpdate = false;

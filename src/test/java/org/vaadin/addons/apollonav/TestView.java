@@ -1,9 +1,8 @@
-package org.vaadin.addons.apollonav.apollo;
+package org.vaadin.addons.apollonav;
 
 import java.util.Arrays;
 
 import com.vaadin.flow.component.html.Div;
-import com.vaadin.flow.component.html.Paragraph;
 import com.vaadin.flow.router.Route;
 
 /**
@@ -14,9 +13,7 @@ import com.vaadin.flow.router.Route;
 public class TestView extends Div {
 
     public TestView() {
-
-        add(new Paragraph("hello"));
-        getElement().getStyle().set("padding-left", "20px");
+        getElement().getStyle().set("padding", "20px");
         ApolloNav nav = new ApolloNav();
         nav.setLabel("Main menu");
         nav.setItems(

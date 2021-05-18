@@ -1,4 +1,4 @@
-package org.vaadin.addons.apollonav.apollo;
+package org.vaadin.addons.apollonav;
 
 import java.io.Serializable;
 import java.util.ArrayList;
