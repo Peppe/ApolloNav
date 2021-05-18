@@ -8,22 +8,19 @@ of `AppLayout`.
 
 ```java
 ApolloNav nav=new ApolloNav();
-        nav.setLabel("Main menu");
-        nav.setItems(
-        new ApolloNavItem("dashboard","Dashboard","lineBarChart"),
-        new ApolloNavItem("customers","Customers","suitcase"),
-        new ApolloNavItem("leads","Leads","tabA",null,
-        Arrays.asList(
-        new ApolloNavItem("leads/high-profile",
-        "High profile","userStar"),
-        new ApolloNavItem("leads/others","Others",
-        "userClock"))),
-        new ApolloNavItem("todos","To-dos","tasks",9,Arrays.asList(
-        new ApolloNavItem("leads/High","High",null,2),
-        new ApolloNavItem("leads/medium","Medium",null,4),
-        new ApolloNavItem("leads/low","Low",null,3))),
-        new ApolloNavItem("inbounds","Inbounds","envelope",12));
-        nav.setWidth("200px");
+nav.setLabel("Main menu");
+nav.setItems(
+  new ApolloNavItem("dashboard","Dashboard","lineBarChart"),
+  new ApolloNavItem("customers","Customers","suitcase"),
+  new ApolloNavItem("leads","Leads","tabA",null, Arrays.asList(
+    new ApolloNavItem("leads/high-profile", "High profile", "userStar"),
+    new ApolloNavItem("leads/others","Others", "userClock"))),
+  new ApolloNavItem("todos","To-dos","tasks",9,Arrays.asList(
+    new ApolloNavItem("leads/High","High",null,2),
+    new ApolloNavItem("leads/medium","Medium",null,4),
+    new ApolloNavItem("leads/low","Low",null,3))),
+  new ApolloNavItem("inbounds","Inbounds","envelope",12));
+nav.setWidth("200px");
 ```
 
 ## Development instructions
